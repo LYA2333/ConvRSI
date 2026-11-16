@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./264091041.jfif" alt="openJiuwen Logo" width="180">
-  <h1>OpenJiuwen</h1>
+  <h1>openJiuwen</h1>
   <p><strong>From Recursion to Convolution: Parallel Self-Improvement for Multi-Agent Systems</strong></p>
   <p>
     <a href="https://github.com/LYA2333/ConvRSI"><img src="https://img.shields.io/badge/GitHub-ConvCSI-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="ConvCSI on GitHub"></a>

@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="./264091041.jfif" alt="openJiuwen Logo" width="180">
+  <img src="assets/openjiuwen-logo.png" alt="openJiuwen Logo" width="180">
   <h1>openJiuwen</h1>
   <p><strong>From Recursion to Convolution: Parallel Self-Improvement for Multi-Agent Systems</strong></p>
   <p>
-    <a href="https://github.com/LYA2333/ConvRSI"><img src="https://img.shields.io/badge/GitHub-ConvCSI-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="ConvCSI on GitHub"></a>
+    <a href="https://github.com/LYA2333/ConvRSI"><img src="https://img.shields.io/badge/GitHub-ConvRSI-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="ConvRSI on GitHub"></a>
     <a href="vendor/recursivemas/LICENSE" title="MIT license for vendored RecursiveMAS"><img src="https://img.shields.io/badge/License-MIT-2EA44F?style=flat-square" alt="MIT license for vendored RecursiveMAS"></a>
   </p>
 </div>
@@ -104,10 +104,12 @@ Use `--train-parquet` or `--train-jsonl` to pass the training split explicitly. 
 ## Model
 
 <p align="center">
-  <img src="assets/framework.png" alt="ConvRSI framework with intra-agent convolution and recurrent graph message passing" width="600">
+  <a href="assets/framework.pdf" title="Open the framework PDF">
+    <img src="assets/framework.svg" alt="ConvRSI framework with intra-agent convolution and recurrent graph message passing" width="600">
+  </a>
 </p>
 
-**ConvRSI framework.** The figure shows the Sequential roles. Both styles use the same local convolution and graph update with their respective communication graphs.
+**ConvRSI framework.** Each agent produces a local message. The GCN exchanges those messages over the graph for the selected collaboration style.
 
 - **Feature slots.** The frozen backbones encode task, role, system, and experience features once per example in a system forward pass. The default slot reader produces eight slots per feature. The recurrent message starts as a masked zero.
 - **Intra-agent Conv.** Depthwise Conv1D mixes feature types independently at each slot. Gated pooling produces each agent's local message.
@@ -117,7 +119,9 @@ Use `--train-parquet` or `--train-jsonl` to pass the training split explicitly. 
 ## Training
 
 <p align="center">
-  <img src="assets/ConvRSI_overall_pipeline_final.png" alt="ConvRSI pipeline for parallel Inner training and graph-based Outer training" width="800">
+  <a href="assets/ConvRSI_overall_pipeline_final_vector.pdf" title="Open the training pipeline PDF">
+    <img src="assets/ConvRSI_overall_pipeline_final_vector.svg" alt="ConvRSI pipeline for parallel Inner training and graph-based Outer training" width="800">
+  </a>
 </p>
 
 **Two-stage training.** The Inner panel illustrates the optional local cross-entropy objective. The Outer panel shows how GCN feedback allows round prefixes to be precomputed. The training entry point executes Conv–GCN followed by agent collaboration in each round.

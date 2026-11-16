@@ -1,9 +1,9 @@
 <div align="center">
   <img src="./264091041.jfif" alt="openJiuwen Logo" width="180">
   <h1>OpenJiuwen</h1>
-  <p><strong>Convolutional co-evolution for multi-agent language models</strong></p>
+  <p><strong>From Recursion to Convolution: Parallel Self-Improvement for Multi-Agent Systems</strong></p>
   <p>
-    <a href="https://github.com/LYA2333/CSI"><img src="https://img.shields.io/badge/GitHub-ConvCSI-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="ConvCSI on GitHub"></a>
+    <a href="https://github.com/LYA2333/ConvRSI"><img src="https://img.shields.io/badge/GitHub-ConvCSI-181717?style=flat-square&amp;logo=github&amp;logoColor=white" alt="ConvCSI on GitHub"></a>
     <a href="vendor/recursivemas/LICENSE" title="MIT license for vendored RecursiveMAS"><img src="https://img.shields.io/badge/License-MIT-2EA44F?style=flat-square" alt="MIT license for vendored RecursiveMAS"></a>
   </p>
 </div>
@@ -124,8 +124,8 @@ Use `--train-parquet` or `--train-jsonl` to pass the training split explicitly. 
 
 | Stage | Objective | Updated modules |
 | --- | --- | --- |
-| **Inner** | Cosine alignment between transformed detached hidden states and reference-token embeddings by default. Set `--inner-ce-weight 1` to add local token cross-entropy. | InnerLinks for alignment. Local CSI modules receive gradients from the optional CE term. |
-| **Outer** | Teacher-forced collaboration with token cross-entropy on the final-round Solver or Summarizer answer. | Local CSI modules, GCN, and OuterLinks. |
+| **Inner** | Cosine alignment between transformed detached hidden states and reference-token embeddings by default. Set `--inner-ce-weight 1` to add local token cross-entropy. | InnerLinks for alignment. Local ConvRSI modules receive gradients from the optional CE term. |
+| **Outer** | Teacher-forced collaboration with token cross-entropy on the final-round Solver or Summarizer answer. | Local ConvRSI modules, GCN, and OuterLinks. |
 
 Use `--inner-parallel` to train the independent Inner agents concurrently.
 
@@ -158,7 +158,7 @@ python train_csi.py \
 | Flag | Training default | Controls |
 | --- | --- | --- |
 | `--max-steps` | 3 | Number of Conv–GCN and collaboration rounds |
-| `--csi-prefix-tokens` | 8 | Continuous slots per feature and per CSI soft prefix |
+| `--csi-prefix-tokens` | 8 | Continuous slots per feature and per ConvRSI soft prefix |
 | `--d-model` | 512 | Shared convolution and graph width |
 | `--max-feature-tokens` | 1024 | Token limit for each static feature input |
 | `--max-prefix-tokens` | 80 | Maximum latent positions per transfer during Outer training |

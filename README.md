@@ -104,7 +104,7 @@ Use `--train-parquet` or `--train-jsonl` to pass the training split explicitly. 
 ## Model
 
 <p align="center">
-  <img src="assets/framework.png" alt="ConvRSI framework with intra-agent convolution and recurrent graph message passing" width="850">
+  <img src="assets/framework.png" alt="ConvRSI framework with intra-agent convolution and recurrent graph message passing" width="600">
 </p>
 
 **ConvRSI framework.** The figure shows the Sequential roles. Both styles use the same local convolution and graph update with their respective communication graphs.
@@ -117,7 +117,7 @@ Use `--train-parquet` or `--train-jsonl` to pass the training split explicitly. 
 ## Training
 
 <p align="center">
-  <img src="assets/ConvRSI_overall_pipeline_final.png" alt="ConvRSI pipeline for parallel Inner training and graph-based Outer training" width="940">
+  <img src="assets/ConvRSI_overall_pipeline_final.png" alt="ConvRSI pipeline for parallel Inner training and graph-based Outer training" width="800">
 </p>
 
 **Two-stage training.** The Inner panel illustrates the optional local cross-entropy objective. The Outer panel shows how GCN feedback allows round prefixes to be precomputed. The training entry point executes Conv–GCN followed by agent collaboration in each round.

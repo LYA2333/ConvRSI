@@ -33,6 +33,7 @@ https://github.com/user-attachments/assets/c9509b8d-35ee-45b3-b79b-0dc0c78c2d37
 - [Model](#model)
 - [Training](#training)
 - [Evaluation and inference](#evaluation-and-inference)
+- [Citation](#citation)
 - [Acknowledgements](#acknowledgements)
 - [Third-party licenses](#third-party-licenses)
 
@@ -218,6 +219,20 @@ python ours_runner.py \
 | Mixture | [train_mixture.sh](train_mixture.sh) | [infer_mixture.sh](infer_mixture.sh) |
 
 The launchers contain machine-specific paths. Set `MODEL_DIR`, dataset and checkpoint paths, and the active agent devices for your environment. Create `logs/` and `test_logs/` before using the launchers. In `train_mixture.sh`, set `--train-parquet` to the downloaded shard or your prepared training file.
+
+## Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@article{wang2026convrsi,
+  title={From Recursion to Convolution: Parallel Self-Improvement for Multi-Agent Systems},
+  author={Wang, Zheng and Liu, Yuang and Abeywickrama, Sachith and Ding, Yangkai and Yu, Tao and Zhang, Xinyu and Wang, Hongbo and Ye, Qi and Jin, Xuefeng and Zhao, Zhangchun},
+  journal={arXiv preprint arXiv:2611.20891},
+  year={2026},
+  url={https://arxiv.org/abs/2611.20891}
+}
+```
 
 ## Acknowledgements
 
